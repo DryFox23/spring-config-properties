@@ -37,4 +37,23 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals(100, applicationProperties.getDatabase().getMaxTableSize().get("customers"));
         Assertions.assertEquals(100, applicationProperties.getDatabase().getMaxTableSize().get("categories"));
     }
+
+    @Test
+    void testEmbededBeanObjectListandMapConfigurationProperties() {
+        Assertions.assertEquals("default", applicationProperties.getDefaultRoles().get(0).getId());
+        Assertions.assertEquals("default role", applicationProperties.getDefaultRoles().get(0).getName());
+        Assertions.assertEquals("guest", applicationProperties.getDefaultRoles().get(1).getId());
+        Assertions.assertEquals("guest role", applicationProperties.getDefaultRoles().get(1).getName());
+
+        Assertions.assertEquals("admin",applicationProperties.getRoles().get("admin").getId());
+        Assertions.assertEquals("admin role", applicationProperties.getRoles().get("admin role").getId());
+        Assertions.assertEquals("guest",applicationProperties.getRoles().get("guest").getId());
+        Assertions.assertEquals("guest role", applicationProperties.getRoles().get("guest role").getName());
+
+        Assertions.assertEquals("admin", applicationProperties.getRoles().get("admin").getId());
+        Assertions.assertEquals("admin role", applicationProperties.getRoles().get("admin").getName());
+        Assertions.assertEquals("guest", applicationProperties.getRoles().get("guest").getId());
+        Assertions.assertEquals("guest role", applicationProperties.getRoles().get("guest").getName());
+
+    }
 }
