@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Arrays;
+
 @SpringBootTest(classes = ApplicationPropertiesApp.class)
 public class ConfigurationPropertiesTest {
 
@@ -26,5 +28,13 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals("rahasia", applicationProperties.getDatabase().getPassword());
         Assertions.assertEquals("mysql", applicationProperties.getDatabase().getDriver());
         Assertions.assertEquals("jdbc:contoh", applicationProperties.getDatabase().getUrl());
+    }
+
+    @Test
+    void testListandMapConfigurationProperties() {
+        Assertions.assertEquals(Arrays.asList("products", "customers", "categories"), applicationProperties.getDatabase().getWhitelisttables());
+        Assertions.assertEquals(100, applicationProperties.getDatabase().getMaxTableSize().get("products"));
+        Assertions.assertEquals(100, applicationProperties.getDatabase().getMaxTableSize().get("customers"));
+        Assertions.assertEquals(100, applicationProperties.getDatabase().getMaxTableSize().get("categories"));
     }
 }
