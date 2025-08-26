@@ -17,6 +17,8 @@ public class ApplicationProperties {
     private Integer version;
     private boolean productionMode;
     private DatabaseProperties database;
+    private List<Role> defaultRoles;
+    private Map<String,Role> roles;
 
     @Getter
     @Setter
@@ -27,5 +29,12 @@ public class ApplicationProperties {
         private String driver;
         private List<String> whitelisttables;
         private Map<String,Integer> maxTableSize;
+    }
+
+    @Getter
+    @Setter
+    public static class Role{
+        private String id;
+        private String name;
     }
 }
