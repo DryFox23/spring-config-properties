@@ -19,4 +19,12 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals(1, applicationProperties.getVersion());
         Assertions.assertFalse(applicationProperties.isProductionMode());
     }
+
+    @Test
+    void testApplicationPropertiesDatabase() {
+        Assertions.assertEquals("bernad", applicationProperties.getDatabase().getUsername());
+        Assertions.assertEquals("rahasia", applicationProperties.getDatabase().getPassword());
+        Assertions.assertEquals("mysql", applicationProperties.getDatabase().getDriver());
+        Assertions.assertEquals("jdbc:contoh", applicationProperties.getDatabase().getUrl());
+    }
 }
