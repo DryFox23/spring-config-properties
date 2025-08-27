@@ -6,14 +6,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.convert.ConversionService;
 
+import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Arrays;
+import java.util.Date;
 
 @SpringBootTest(classes = ApplicationPropertiesApp.class)
 public class ConfigurationPropertiesTest {
 
     @Autowired
     private ApplicationProperties applicationProperties;
+
+    @Autowired
+    private ConversionService conversionService;
 
     @Test
     void testApplicationProperties() {
@@ -55,5 +62,32 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals("guest", applicationProperties.getRoles().get("guest").getId());
         Assertions.assertEquals("guest role", applicationProperties.getRoles().get("guest").getName());
 
+    }
+
+    @Test
+    void testv() {
+        Assertions.assertEquals("contoh", applicationProperties.getTest().getNameTest());
+        Assertions.assertEquals(1, applicationProperties.getTest().getVersionTest());
+    }
+
+    @Test
+    void testDuration() {
+        Assertions.assertEquals(Duration.ofSeconds(10), applicationProperties.getDefaultDuration());
+    }
+
+    @Test
+    void testExpiredDate() {
+        Date expiredDate = applicationProperties.getExpiredDate();
+
+        var dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Assertions.assertEquals("2023-03-03", dateFormat.format(expiredDate));
+    }
+
+    @Test
+    void testConversionService() {
+        Assertions.assertTrue(conversionService.canConvert(String.class, Duration.class));
+        Assertions.assertTrue(conversionService.canConvert(String.class, Date.class));
+
+        Assertions.assertEquals(Duration.ofSeconds(10), conversionService.convert("10s", Duration.class));
     }
 }
