@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +21,10 @@ public class ApplicationProperties {
     private DatabaseProperties database;
     private List<Role> defaultRoles;
     private Map<String,Role> roles;
+    private test test;
+
+    private Duration defaultDuration;
+    private Date expiredDate;
 
     @Getter
     @Setter
