@@ -1,4 +1,4 @@
-package com.bernadinusnaisau.spring.config.app.properties;
+package com.bernadinusnaisau.spring.config.properties;
 
 
 import lombok.Getter;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-@ConfigurationProperties("application")
+@ConfigurationProperties( prefix = "application")
 public class ApplicationProperties {
 
     private String name;

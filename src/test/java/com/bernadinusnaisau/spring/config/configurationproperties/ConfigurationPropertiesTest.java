@@ -1,7 +1,7 @@
 package com.bernadinusnaisau.spring.config.configurationproperties;
 
-import com.bernadinusnaisau.spring.config.app.properties.ApplicationProperties;
-import com.bernadinusnaisau.spring.config.app.properties.ApplicationPropertiesApp;
+import com.bernadinusnaisau.spring.config.properties.ApplicationProperties;
+import com.bernadinusnaisau.spring.config.properties.ApplicationPropertiesApp;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,11 +51,6 @@ public class ConfigurationPropertiesTest {
         Assertions.assertEquals("default role", applicationProperties.getDefaultRoles().get(0).getName());
         Assertions.assertEquals("guest", applicationProperties.getDefaultRoles().get(1).getId());
         Assertions.assertEquals("guest role", applicationProperties.getDefaultRoles().get(1).getName());
-
-        Assertions.assertEquals("admin",applicationProperties.getRoles().get("admin").getId());
-        Assertions.assertEquals("admin role", applicationProperties.getRoles().get("admin role").getId());
-        Assertions.assertEquals("guest",applicationProperties.getRoles().get("guest").getId());
-        Assertions.assertEquals("guest role", applicationProperties.getRoles().get("guest role").getName());
 
         Assertions.assertEquals("admin", applicationProperties.getRoles().get("admin").getId());
         Assertions.assertEquals("admin role", applicationProperties.getRoles().get("admin").getName());

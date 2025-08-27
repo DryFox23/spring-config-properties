@@ -1,13 +1,13 @@
 package com.bernadinusnaisau.spring.config.appproperties;
 
-import com.bernadinusnaisau.spring.config.app.ApplicationPropertiesApp;
+import com.bernadinusnaisau.spring.config.app.ApplicationPropertiesAppConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 
-@SpringBootTest(classes = ApplicationPropertiesApp.class)
+@SpringBootTest(classes = ApplicationPropertiesAppConfig.class)
 public class ApplicationPropertiesTest {
 
 

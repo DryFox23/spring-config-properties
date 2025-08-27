@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
 
 @SpringBootApplication
-public class ApplicationPropertiesApp {
+public class ApplicationPropertiesAppConfig {
 
     @Autowired
     private Environment environment;

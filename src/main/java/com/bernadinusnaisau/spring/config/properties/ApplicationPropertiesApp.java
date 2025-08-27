@@ -1,6 +1,6 @@
-package com.bernadinusnaisau.spring.config.app.properties;
+package com.bernadinusnaisau.spring.config.properties;
 
-import com.bernadinusnaisau.spring.config.app.converter.StringToDateConverter;
+import com.bernadinusnaisau.spring.config.converter.StringToDateConverter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.convert.ApplicationConversionService;

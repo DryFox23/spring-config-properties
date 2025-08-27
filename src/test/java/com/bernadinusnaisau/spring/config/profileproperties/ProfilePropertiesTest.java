@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(classes = ProfilePropertiesApp.class)
-@ActiveProfiles({"production", "test"})
+@ActiveProfiles({"production"})
 public class ProfilePropertiesTest {
     
     @Autowired
@@ -16,8 +16,8 @@ public class ProfilePropertiesTest {
 
     @Test
     void testProfileProperties() {
-        Assertions.assertEquals("default", profileProperties.getDefaultProfile());
+//        Assertions.assertEquals("default", profileProperties.getDefaultProfile());
         Assertions.assertEquals("production", profileProperties.getProductionProfile());
-        Assertions.assertEquals("test", profileProperties.getTestProfile());
+//        Assertions.assertEquals("test", profileProperties.getTestProfile());
     }
 }

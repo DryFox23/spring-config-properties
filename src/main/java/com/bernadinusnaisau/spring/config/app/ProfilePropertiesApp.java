@@ -11,6 +11,7 @@ public class ProfilePropertiesApp {
 
     @Getter
     @Component
+    @Profile("production")
     public static class GetProfileProperties {
 
         @Value("${profile.default}")

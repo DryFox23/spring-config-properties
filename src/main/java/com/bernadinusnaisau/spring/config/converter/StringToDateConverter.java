@@ -1,4 +1,4 @@
-package com.bernadinusnaisau.spring.config.app.converter;
+package com.bernadinusnaisau.spring.config.converter;
 
 import lombok.SneakyThrows;
 import org.springframework.core.convert.converter.Converter;

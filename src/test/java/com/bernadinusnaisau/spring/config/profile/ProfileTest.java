@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(classes = ProfileApp.class)
-@ActiveProfiles({"local"})
+@ActiveProfiles({"production"})
 public class ProfileTest {
 
     @Autowired
